@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee /WEB-INF/schema/web-facesconfig_2_0.xsd"
+	version="2.0" metadata-complete="false">
+	<!-- This file must be present with our jar, even if it is empty. Otherwise, 
+		our Java annotations won't get scanned! -->
+	<managed-bean>
+		<managed-bean-name>daoImpl</managed-bean-name>
+		<managed-bean-class>com.java.hib.ProviderDetailsDAOImpl
+		</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>providerController</managed-bean-name>
+		<managed-bean-class>com.java.hib.ProviderController</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>providerDetails</managed-bean-name>
+		<managed-bean-class>com.java.hib.ProviderDetails</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>prvdCrontroller</managed-bean-name>
+		<managed-bean-class>com.java.hib.ProviderController</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>providerDetails</property-name>
+			<property-class>com.java.hib.ProviderDetails</property-class>
+			<value>#{providerDetails}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>daoImpl</property-name>
+			<property-class>com.java.hib.ProviderDetailsDAOImpl</property-class>
+			<value>#{daoImpl}</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>daoImpll</managed-bean-name>
+		<managed-bean-class>com.java.hib.PatientenrollmentDAOImpl</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>patientController</managed-bean-name>
+		<managed-bean-class>com.java.hib.PatientController</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>patientenrollment</managed-bean-name>
+		<managed-bean-class>com.java.hib.Patientenrollment</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<!-- <managed-bean>
+		<managed-bean-name>patientCrontroller</managed-bean-name>
+		<managed-bean-class>com.java.hib.PatientController</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>patientenrollment</property-name>
+			<property-class>com.java.hib.Patientenrollment</property-class>
+			<value>#{patientenrollment}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>daoImpll</property-name>
+			<property-class>com.java.hib.PatientenrollmentDAOImpl</property-class>
+			<value>#{daoImpll}</value>
+		</managed-property>
+	</managed-bean> -->
+	<managed-bean>
+		<managed-bean-name>patientCrontroller</managed-bean-name>
+		<managed-bean-class>com.java.hib.PatientController</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>patientenrollment</property-name>
+			<property-class>com.java.hib.Patientenrollment</property-class>
+			<value>#{patientenrollment}</value>
+		</managed-property>
+		<managed-property>
+			<property-name>daoImpll</property-name>
+			<property-class>com.java.hib.PatientenrollmentDAOImpl</property-class>
+			<value>#{daoImpll}</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+	<managed-bean-name>paginationDao</managed-bean-name>
+    <managed-bean-class>com.java.jsf.PatientPaginationBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+</managed-bean>
+</faces-config>
